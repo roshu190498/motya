@@ -1,0 +1,69 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Banking</a>
+        </div>
+  
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a routerLink="/account-list">Accounts</a></li>
+            <li><a routerLink="/customer-list">Applied Accounts</a></li>
+            <li><a routerLink="/transaction-list">Tranactions</a></li>
+            <!-- <li><a routerLink="/acc_statement-list">Account Statement Entries</a></li> -->
+            <li><a routerLink="/loan-list">Applied Loans</a></li>
+            <li><a routerLink="/loan-list">Bank Approved Loans</a></li>
+            <li><a routerLink="/employee-list">Employees</a></li>
+            <li><a routerLink="/bankservice-list">Banking Services</a></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <script>
+    function timedRefresh(timeoutPeriod) {
+        setTimeout("location.reload(true);",timeoutPeriod);
+    }
+    
+    window.onload = timedRefresh(5000);
+    
+    </script>
+
+<h1>Account Holder Details</h1>
+
+
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Account No</th>
+            <th>Acc Holder Name</th>
+            <th>Address</th>
+            <th>Mobile No</th>
+            <th>Email</th>
+            <th>Opening Balance</th>
+            <th>Opening Date</th>
+            <th>Activation status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let holder of holders">
+            <td>{{holder.acc_no}}</td>
+            <td>{{holder.name}}</td>
+            <td>{{holder.address}}</td>
+            <td>{{holder.mob_no}}</td>
+            <td>{{holder.email}}</td>
+            <td>{{holder.acc_bal}}</td>
+            <td>{{holder.open_date}}</td>
+            <td>{{holder.activate_status}}</td>
+            <td>
+                <button (click)="onDelete(holder.acc_no)" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+                <button (click)="onUpdate(holder.acc_no)"style="margin-left : 50px" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i></button>
+                <button (click)="onToggle(holder.acc_no, holder.activate_status)"style="margin: 10px" class="btn btn-info"><i class="glyphicon glyphicon-refresh"></i></button>
+                <button (click)="onApprove(holder.acc_no)"style="margin: 10px" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table> 
+

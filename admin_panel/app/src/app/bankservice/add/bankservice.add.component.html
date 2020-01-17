@@ -1,0 +1,34 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Banking</a>
+        </div>
+  
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a routerLink="/account-list">Accounts</a></li>
+            <li><a routerLink="/customer-list">Account Holder Details</a></li>
+            <li><a routerLink="/transaction-list">Tranactions</a></li>
+            <li><a routerLink="/acc_statement-list">Account Statement Entries</a></li>
+            <li><a routerLink="/loan-list">Loans</a></li>
+            <li><a routerLink="/employee-list">Employees</a></li>
+            <li><a routerLink="/bankservice-list">Banking Services</a></li>
+  
+          </ul>
+        </div>
+    </div>
+  </nav>
+
+<h1>Add Service</h1>
+
+<div class="form action=">
+    <div class="form-group">
+        <label for="">Service</label>
+        <input [(ngModel)]="Service" type="text" class="form-control">
+    </div>
+   
+    <div class="form-group">
+        <button (click)="onAdd()" class="btn btn-primary">Add</button>
+        <button (click)="onCancel()"  style="margin: 10px" class="btn btn-danger">Cancel</button>
+    </div>
+</div>

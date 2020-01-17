@@ -1,0 +1,37 @@
+<div class="row" style="margin-top: 30px">
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">My Profile</h3>
+            </div>
+            <div class="panel-body">
+              <a routerLink='/customer-withdraw/{{email}}' routerLinkActive="router-link-active" >Withdraw</a>
+            </div>
+            <div class="panel-body">
+              <a routerLink='/customer-deposit/{{email}}' routerLinkActive="router-link-active" >Deposit</a>
+            </div>
+            <div class="panel-body">
+                <a routerLink='/customer-fundTransfer/{{email}}' routerLinkActive="router-link-active" >Fund Transfer</a>
+            </div>
+            <div class="panel-body">
+              <a routerLink='/customer-accountInfo/{{email}}/{{acc_no}}' routerLinkActive="router-link-active" >Account Details</a>
+            </div>
+            <div class="panel-body">
+              <a routerLink='/customer-loan/{{email}}' routerLinkActive="router-link-active" >Apply for Loan</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="col-md-12">
+            <div class="container">
+                <h3><strong>Account No :</strong>{{acc_no}}</h3>
+                <h3><strong>Account Holder Name :</strong>{{name}}</h3>
+                <h3><strong>Address :</strong>{{address}}</h3>
+                <h3><strong>Mob. No :</strong>{{mob_no}}</h3>
+                <h3><strong>Account Balance :</strong>{{open_bal}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+

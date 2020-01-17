@@ -1,0 +1,26 @@
+<h1>Employee Details</h1>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Emp No</th>
+            <th>Employee Name</th>
+            <th>Emplyee Email</th>
+            <th>Employee Password</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.user_id}}</td>
+            <td>{{employee.user_name}}</td>
+            <td>{{employee.user_email}}</td>
+            <td>{{employee.user_password}}</td>
+            <td>
+                <button (click)="onDelete(employee.user_id)" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+                <button style="margin: 10px" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i></button>    
+            </td>
+        </tr>
+    </tbody>
+</table>

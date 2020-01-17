@@ -1,0 +1,23 @@
+<h1>Account Types</h1>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Type Id</th>
+            <th>Account Type</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let acc_type of acc_types">
+            <td>{{acc_type.type_id}}</td>
+            <td>{{acc_type.acc_type}}</td>
+          
+            <td>
+                <button (click)="onDelete(acc_type.type_id)" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+                <button style="margin: 10px" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

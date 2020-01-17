@@ -1,0 +1,53 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Banking</a>
+        </div>
+  
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a routerLink="/account-list">Accounts</a></li>
+            <li><a routerLink="/customer-list">Applied Accounts</a></li>
+            <li><a routerLink="/transaction-list">Tranactions</a></li>
+            <!-- <li><a routerLink="/acc_statement-list">Account Statement Entries</a></li> -->
+            <li><a routerLink="/loan-list">Applied Loans</a></li>
+            <li><a routerLink="/loan-list">Bank Approved Loans</a></li>
+            <li><a routerLink="/employee-list">Employees</a></li>
+            <li><a routerLink="/bankservice-list">Banking Services</a></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+<h1>Transaction List</h1>
+
+<div>
+    <button (click)="onAddTransaction()" style="margin: 10px" class="btn btn-primary pull-right" >Add Transaction</button>
+</div>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Trans Id</th>
+            <th>Account No</th>
+            <th>Account Type</th>
+            <th>Trans Amount</th>
+            <th>Trans Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let trans of transactions">
+            <td>{{trans.trans_id}}</td>
+            <td>{{trans.acc_no}}</td>
+            <td>{{trans.trans_type}}</td>
+            <td>{{trans.trans_amount}}</td>
+            <td>{{trans.trans_date}}</td>
+            <td>
+                <button (click)="onDelete(trans.trans_id)" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+                <button style="margin: 10px" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

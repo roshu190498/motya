@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Banking</a>
+        </div>
+  
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a routerLink="/account-list">Accounts</a></li>
+            <li><a routerLink="/customer-list">Account Holder Details</a></li>
+            <li><a routerLink="/transaction-list">Tranactions</a></li>
+            <li><a routerLink="/acc_statement-list">Account Statement Entries</a></li>
+            <li><a routerLink="/loan-list">Loans</a></li>
+            <li><a routerLink="/employee-list">Employees</a></li>
+            <li><a routerLink="/bankservice-list">Banking Services</a></li>
+  
+          </ul>
+        </div>
+    </div>
+  </nav>
+
+<div class="container">
+    <h1>Update Account</h1>
+    <div class="form">
+        <div class="form-group">
+            <label for="">Account Type</label>
+            <select [(ngModel)]="type_id" class="form-control">
+                <option *ngFor="let acc_type of types" [value]="acc_type.type_id">{{acc_type.acc_type}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="">Account Balance</label>
+            <input [(ngModel)]="acc_balance" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Account Status</label>
+            <select [(ngModel)]="status_id" class="form-control">
+                <option *ngFor="let acc_status of status" [value]="acc_status.status_id">{{acc_status.acc_status}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button (click)="updateAccount()" class="btn btn-success">Update</button>
+            <button style="margin-left: 10px" (click)="updateCancel()" class="btn btn-danger">Cancel</button>
+        </div>
+    </div>
+</div>

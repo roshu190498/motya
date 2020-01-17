@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Banking</a>
+        </div>
+  
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a routerLink="/account-list">Accounts</a></li>
+            <li><a routerLink="/customer-list">Account Holder Details</a></li>
+            <li><a routerLink="/transaction-list">Tranactions</a></li>
+            <li><a routerLink="/acc_statement-list">Account Statement Entries</a></li>
+            <li><a routerLink="/loan-list">Loans</a></li>
+            <li><a routerLink="/employee-list">Employees</a></li>
+            <li><a routerLink="/bankservice-list">Banking Services</a></li>
+  
+          </ul>
+        </div>
+    </div>
+  </nav>
+
+<h1>Account Statements Entries</h1>
+
+<div>
+<button (click)="onAdd()" style="margin: 10px" class="btn btn-primary pull-right" >Add Account</button>
+</div>
+
+<table class="table table-striped table-bordered">
+<thead>
+    <tr>
+        <th>Entry No</th>
+        <th>Account No</th>
+        <th>Transaction Id</th>
+        <th>Actions</th>
+    </tr>
+</thead>
+
+<tbody>
+    <tr *ngFor="let entry of entries">
+        <td>{{entry.entry_no}}</td>
+        <td>{{entry.acc_no}}</td>
+        <td>{{entry.trans_id}}</td>
+        <td>
+            <button (click)="onDelete(entry.entry_no)" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+            <button style="margin: 10px" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i></button>
+        </td>
+    </tr>
+</tbody>
+</table>

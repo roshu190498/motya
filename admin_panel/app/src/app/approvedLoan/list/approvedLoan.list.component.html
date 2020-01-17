@@ -1,0 +1,57 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Banking</a>
+        </div>
+  
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a routerLink="/account-list">Accounts</a></li>
+            <li><a routerLink="/customer-list">Applied Accounts</a></li>
+            <li><a routerLink="/transaction-list">Tranactions</a></li>
+            <!-- <li><a routerLink="/acc_statement-list">Account Statement Entries</a></li> -->
+            <li><a routerLink="/loan-list">Applied Loans</a></li>
+            <li><a routerLink="/loan-list">Bank Approved Loans</a></li>
+            <li><a routerLink="/employee-list">Employees</a></li>
+            <li><a routerLink="/bankservice-list">Banking Services</a></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+<h1>Loans List</h1>
+
+
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Loan Account No</th>
+            <th>Saving Account No</th>
+            <th>Loan Amount</th>
+            <th>Loan Type</th>
+            <th>Loan Status</th>
+            <th>Interest Rate</th>
+            <th>No of EMI</th>
+            <th>EMI Amount</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let loan of loans">
+            <td>{{loan.loan_no}}</td>
+            <td>{{loan.acc_no}}</td>
+            <td>{{loan.loan_amount}}</td>
+            <td>{{loan.type_id}}</td>
+            <td>{{loan.status_id}}</td>
+            <td>{{loan.interest_rate}}</td>
+            <td>{{loan.no_of_EMI}}</td>
+            <td>{{loan.EMI_amount}}</td>
+            <td>
+                <button (click)="onUpdate(loan.acc_no)" class="btn btn-warning">Update<i class="glyphicon glyphicon-pencil"></i></button>    
+                <button (click)="onDelete(loan.acc_no)" style="margin: 10px" class="btn btn-danger">Delete<i class="glyphicon glyphicon-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

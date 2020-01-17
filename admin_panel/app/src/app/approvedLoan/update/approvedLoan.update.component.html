@@ -1,0 +1,53 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Banking</a>
+        </div>
+  
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a routerLink="/account-list">Accounts</a></li>
+            <li><a routerLink="/customer-list">Account Holder Details</a></li>
+            <li><a routerLink="/transaction-list">Tranactions</a></li>
+            <li><a routerLink="/acc_statement-list">Account Statement Entries</a></li>
+            <li><a routerLink="/loan-list">Loans</a></li>
+            <li><a routerLink="/employee-list">Employees</a></li>
+            <li><a routerLink="/bankservice-list">Banking Services</a></li>
+  
+          </ul>
+        </div>
+    </div>
+  </nav>
+
+<h1>Update Loan Account</h1>
+
+<div class="form action=">
+    <div class="form-group">
+            <label for="">Loan Amount</label>
+            <input [(ngModel)]="loan_amount" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Interest Rate</label>
+        <select [(ngModel)]="rate_id" class="form-control">
+            <option *ngFor="let loan_rate of rates" [value]="loan_rate.id">{{loan_rate.interest_rate}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">No of EMI'S</label>
+        <input [(ngModel)]="emiNo" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">EMI Amount</label>
+        <input [(ngModel)]="emi_amount" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Loan Status</label>
+        <select [(ngModel)]="status_id" class="form-control">
+            <option *ngFor="let loan_status of status" [value]="loan_status.status_id">{{loan_status.loan_status}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button (click)="onUpdateLoan()" class="btn btn-primary">Update</button>
+        <button (click)="onCancel()"  style="margin: 10px" class="btn btn-danger">Cancel</button>
+    </div>
+</div>

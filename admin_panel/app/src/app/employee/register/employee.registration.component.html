@@ -1,0 +1,31 @@
+<h1>Employee Register</h1>
+
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="login">
+
+      <div class="form">
+        <div class="form-group">
+          <label for="">User Name</label>
+          <input [(ngModel)]="user_name" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Email</label>
+          <input [(ngModel)]="user_email" type="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Pasword</label>
+          <input [(ngModel)]="user_password" type="password" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <button (click)="onRegistration()" class="btn btn-success">Register</button>
+          <a routerLink="/employee-login" class="btn btn-danger pull-right">Cancel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>
