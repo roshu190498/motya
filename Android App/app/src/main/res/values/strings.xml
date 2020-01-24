@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MyBank</string>
+    <string name="action_logOut">Log Out</string>
+    <string name="title_activity_details">My Bank</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="name">Name:</string>
+    <string name="address">Address:</string>
+    <string name="phone_no">Phone:</string>
+    <string name="email">Email:</string>
+    <string name="account_balance">Account Balance:</string>
+    <string name="a_c_open_date">A/c Open Date:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
